@@ -36,6 +36,7 @@ func print() {
 		fmt.Printf("%d ", temp.data)
 		temp = temp.next
 	}
+	fmt.Println()
 }
 
 func main() {
