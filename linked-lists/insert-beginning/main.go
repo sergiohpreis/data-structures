@@ -11,7 +11,7 @@ type Node struct {
 
 // Inserting in the beginning of the list
 // head is the address (*) of the head, that points to the address(*) of a Node
-func Insert(head **Node, x int) {
+func insert(head **Node, x int) {
 	// temp is the address of a node that doesn`t point to any node
 	temp := &Node{data: x, next: nil}
 
@@ -22,7 +22,7 @@ func Insert(head **Node, x int) {
 	*head = temp // now head points to the new node (inserted)
 }
 
-func Print(head *Node) {
+func print(head *Node) {
 	fmt.Println("List is: ")
 
 	for head != nil {
@@ -47,7 +47,7 @@ func main() {
 
 		// &head is the address of the head variable
 		// We can change head value inside the function Insert
-		Insert(&head, x)
-		Print(head)
+		insert(&head, x)
+		print(head)
 	}
 }
