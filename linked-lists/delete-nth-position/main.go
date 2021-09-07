@@ -43,7 +43,6 @@ func delete(n int) {
 	// wants to remove the first element
 	if n == 1 {
 		head = temp1.next // head now points to the second Node
-		temp1 = nil       // free the memory
 		return
 	}
 
@@ -53,7 +52,6 @@ func delete(n int) {
 
 	temp2 := temp1.next     // nth Node
 	temp1.next = temp2.next // (n+1)th Node
-	temp2 = nil             // free the memory
 }
 
 func main() {
