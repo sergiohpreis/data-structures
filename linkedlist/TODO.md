@@ -5,3 +5,4 @@
 - [X] Implement `print.go` (reverse print)
 - [ ] Implement `reverse.go`
 - [ ] Verify my code with `mycodeschool` code
+- [ ] Add tests
