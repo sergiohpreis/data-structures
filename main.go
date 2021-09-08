@@ -18,6 +18,12 @@ func linkedlist() {
 	list = linkedlists.InsertAtBeginning(list, 0)
 
 	linkedlists.Print(list)
+	list = linkedlists.DeleteFirstNode(list)
+	linkedlists.Print(list)
+	list = linkedlists.DeleteLastNode(list)
+	linkedlists.Print(list)
+	list, _ = linkedlists.DeleteNthNode(list, 2)
+	linkedlists.Print(list)
 }
 
 func main() {
