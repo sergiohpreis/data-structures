@@ -8,12 +8,11 @@ import (
 func InsertAtBeginning(head *Node, data int) *Node {
 	node := &Node{Data: data}
 
-	if head == nil {
-		head = node
-	} else {
+	if head != nil {
 		node.Next = head
-		head = node
 	}
+
+	head = node
 
 	return head
 }

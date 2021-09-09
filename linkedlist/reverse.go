@@ -7,10 +7,9 @@ func reverse(head **Node, p *Node) {
 	}
 
 	reverse(head, p.Next)
-	prev := p // n-1
 	current := p.Next
-	prev.Next = nil
-	current.Next = prev
+	current.Next = p
+	p.Next = nil
 }
 
 func Reverse(p *Node) *Node {

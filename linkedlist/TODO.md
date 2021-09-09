@@ -4,5 +4,5 @@
 - [X] Implement `delete.go`
 - [X] Implement `print.go` (reverse print)
 - [X] Implement `reverse.go`
-- [ ] Verify my code with `mycodeschool` code
+- [X] Verify my code with `mycodeschool` code
 - [ ] Add tests
