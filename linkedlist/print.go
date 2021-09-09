@@ -12,15 +12,15 @@ func Print(head *Node) {
 	fmt.Println()
 }
 
-func reverse(p *Node) {
+func printReverse(p *Node) {
 	if p == nil {
 		return
 	}
 
-	reverse(p.Next)
+	printReverse(p.Next)
 	fmt.Printf("%d ", p.Data)
 }
 func PrintReverse(p *Node) {
-	reverse(p)
+	printReverse(p)
 	fmt.Println()
 }

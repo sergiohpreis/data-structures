@@ -1,6 +1,8 @@
 package main
 
-import "github.com/sergiohpreis/datastructures/linkedlist"
+import (
+	"github.com/sergiohpreis/datastructures/linkedlist"
+)
 
 func createLinkedList() {
 	var list *linkedlist.Node
@@ -25,6 +27,8 @@ func createLinkedList() {
 	list, _ = linkedlist.DeleteNthNode(list, 2)
 	linkedlist.Print(list)
 	linkedlist.PrintReverse(list)
+	list = linkedlist.Reverse(list)
+	linkedlist.Print(list)
 }
 
 func main() {
