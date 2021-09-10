@@ -1,10 +1,11 @@
 package main
 
 import (
+	"github.com/sergiohpreis/datastructures/doublylinkedlist"
 	"github.com/sergiohpreis/datastructures/linkedlist"
 )
 
-func createLinkedList() {
+func createSinglyLinkedList() *linkedlist.Node {
 	var list *linkedlist.Node
 
 	list = linkedlist.InsertAtEnd(list, 1)
@@ -16,21 +17,32 @@ func createLinkedList() {
 	list = linkedlist.InsertAtEnd(list, 7)
 	list, _ = linkedlist.InsertAtNth(list, 100, 4)
 	list = linkedlist.InsertAtBeginning(list, 0)
-	linkedlist.Print(list)
 
 	list = linkedlist.DeleteFirstNode(list)
-	linkedlist.Print(list)
-
 	list = linkedlist.DeleteLastNode(list)
-	linkedlist.Print(list)
-
 	list, _ = linkedlist.DeleteNthNode(list, 2)
-	linkedlist.Print(list)
-	linkedlist.PrintReverse(list)
+
 	list = linkedlist.Reverse(list)
-	linkedlist.Print(list)
+
+	return list
+}
+
+func createDoublyLinkedList() *doublylinkedlist.Node {
+	var head *doublylinkedlist.Node
+
+	head = doublylinkedlist.InsertAtHead(head, 1)
+	head = doublylinkedlist.InsertAtHead(head, 2)
+	head = doublylinkedlist.InsertAtTail(head, 3)
+	head = doublylinkedlist.InsertAtTail(head, 4)
+	return head
 }
 
 func main() {
-	createLinkedList()
+	singly := createSinglyLinkedList()
+	linkedlist.Print(singly)
+	linkedlist.PrintReverse(singly)
+
+	doubly := createDoublyLinkedList()
+	doublylinkedlist.Print(doubly)
+	doublylinkedlist.ReversePrint(doubly)
 }
