@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/sergiohpreis/datastructures/doublylinkedlist"
 	"github.com/sergiohpreis/datastructures/linkedlist"
+	"github.com/sergiohpreis/datastructures/stack"
 )
 
 func createSinglyLinkedList() *linkedlist.Node {
@@ -37,6 +38,19 @@ func createDoublyLinkedList() *doublylinkedlist.Node {
 	return head
 }
 
+func createStack() *stack.Stack {
+	var stack stack.Stack
+
+	stack.Create()
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+	stack.Push(4)
+
+	return &stack
+
+}
+
 func main() {
 	singly := createSinglyLinkedList()
 	linkedlist.Print(singly)
@@ -45,4 +59,7 @@ func main() {
 	doubly := createDoublyLinkedList()
 	doublylinkedlist.Print(doubly)
 	doublylinkedlist.ReversePrint(doubly)
+
+	stack := createStack()
+	stack.Print()
 }
