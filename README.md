@@ -1,6 +1,11 @@
 # Data Structures
 
-Studying data structures implementations using Golang 
+Studying data structures implementations using Golang
+
+## Structures implemented
+- Singly Linked List
+- Doubly Linked List
+- Stack
 
 ## Resources
 
