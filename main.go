@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/sergiohpreis/datastructures/doublylinkedlist"
 	"github.com/sergiohpreis/datastructures/linkedlist"
 	"github.com/sergiohpreis/datastructures/stack"
@@ -55,11 +57,16 @@ func main() {
 	singly := createSinglyLinkedList()
 	linkedlist.Print(singly)
 	linkedlist.PrintReverse(singly)
+	singlyReversed := linkedlist.ReverseUsingStack(singly)
+	linkedlist.Print((singlyReversed))
 
 	doubly := createDoublyLinkedList()
 	doublylinkedlist.Print(doubly)
 	doublylinkedlist.ReversePrint(doubly)
 
-	stack := createStack()
-	stack.Print()
+	s := createStack()
+	s.Print()
+
+	fmt.Println(stack.ReverseString("Teste"))
+	fmt.Println(stack.ReverseStringUsingSwap("Teste"))
 }

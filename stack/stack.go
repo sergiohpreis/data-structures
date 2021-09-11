@@ -1,9 +1,12 @@
 package stack
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const MAX_SIZE = 101
 
+// TODO: Change the implementation to allow [] of any type
 type Stack struct {
 	List [MAX_SIZE]int
 	top  int
