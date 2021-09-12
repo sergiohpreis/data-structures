@@ -70,6 +70,11 @@ func main() {
 	s := createStack()
 	s.Print()
 
-	fmt.Println(stack.ReverseString("Teste"))
-	fmt.Println(stack.ReverseStringUsingSwap("Teste"))
+	fmt.Println(stack.ReverseString("Teste"))          // etset
+	fmt.Println(stack.ReverseStringUsingSwap("Teste")) // etset
+
+	fmt.Println(stack.IsBalanced((")(")))     // false
+	fmt.Println(stack.IsBalanced(("[(])")))   // false
+	fmt.Println(stack.IsBalanced(("[()")))    // false
+	fmt.Println(stack.IsBalanced(("{()()}"))) // true
 }
