@@ -2,31 +2,29 @@ package doublylinkedlist
 
 import "fmt"
 
-func Print(head *Node) {
-	fmt.Printf("Forward: ")
-	current := head
+func (list *List) Print() {
+	current := list.head
 
 	for current != nil {
-		fmt.Printf("%d ", current.Data)
-		current = current.Next
+		fmt.Printf("%d ", current.data)
+		current = current.next
 	}
 	fmt.Println()
 }
 
-func ReversePrint(head *Node) {
-	if head == nil {
+func (list *List) ReversePrint() {
+	if list.head == nil {
 		return
 	}
 
-	current := head
-	for current.Next != nil {
-		current = current.Next
+	current := list.head
+	for current.next != nil {
+		current = current.next
 	}
 
-	fmt.Printf("Backward: ")
 	for current != nil {
-		fmt.Printf("%d ", current.Data)
-		current = current.Prev
+		fmt.Printf("%d ", current.data)
+		current = current.prev
 	}
 
 	fmt.Println()

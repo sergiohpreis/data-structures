@@ -1,21 +1,19 @@
-package linkedlist
+package singlylinkedlist
 
 func reverse(head **Node, p *Node) {
-	if p.Next == nil {
+	if p.next == nil {
 		*head = p
 		return
 	}
 
-	reverse(head, p.Next)
-	current := p.Next
-	current.Next = p
-	p.Next = nil
+	reverse(head, p.next)
+	current := p.next
+	current.next = p
+	p.next = nil
 }
 
-func Reverse(p *Node) *Node {
-	var head *Node
-	reverse(&head, p)
-	return head
+func (list *List) Reverse() {
+	reverse(&list.head, list.head)
 }
 
 // TODO: Remove from here and add to stack
@@ -26,30 +24,28 @@ func pop(stack []*Node) []*Node {
 	return stack[:len(stack)-1]
 }
 
-func ReverseUsingStack(head *Node) *Node {
-	if head == nil {
-		return head
+func (list *List) ReverseUsingStack() {
+	if list.head == nil {
+		return
 	}
 
 	var stack []*Node
-	temp := head
+	temp := list.head
 
 	for temp != nil {
 		stack = append(stack, temp)
-		temp = temp.Next
+		temp = temp.next
 	}
 
 	temp = top(stack)
-	head = temp
+	list.head = temp
 
 	stack = pop(stack)
 
 	for len(stack) > 0 {
-		temp.Next = top(stack)
+		temp.next = top(stack)
 		stack = pop(stack)
-		temp = temp.Next
+		temp = temp.next
 	}
-	temp.Next = nil
-
-	return head
+	temp.next = nil
 }

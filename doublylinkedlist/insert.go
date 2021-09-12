@@ -1,27 +1,25 @@
 package doublylinkedlist
 
-func InsertAtHead(head *Node, data int) *Node {
-	node := &Node{Data: data}
+func (list *List) InsertAtHead(data interface{}) {
+	node := &Node{data: data}
 
-	if head != nil {
-		head.Prev = node
-		node.Next = head
+	if list.head != nil {
+		list.head.prev = node
+		node.next = list.head
 	}
 
-	head = node
-	return head
+	list.head = node
 }
 
-func InsertAtTail(head *Node, data int) *Node {
-	node := &Node{Data: data}
+func (list *List) InsertAtTail(data interface{}) {
+	node := &Node{data: data}
 
-	current := head
+	current := list.head
 
-	for current.Next != nil {
-		current = current.Next
+	for current.next != nil {
+		current = current.next
 	}
 
-	node.Prev = current
-	current.Next = node
-	return head
+	node.prev = current
+	current.next = node
 }

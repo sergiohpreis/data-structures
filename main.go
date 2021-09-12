@@ -4,40 +4,41 @@ import (
 	"fmt"
 
 	"github.com/sergiohpreis/datastructures/doublylinkedlist"
-	"github.com/sergiohpreis/datastructures/linkedlist"
+	"github.com/sergiohpreis/datastructures/singlylinkedlist"
 	"github.com/sergiohpreis/datastructures/stack"
 )
 
-func createSinglyLinkedList() *linkedlist.Node {
-	var list *linkedlist.Node
+func createSinglyLinkedList() singlylinkedlist.List {
+	var list singlylinkedlist.List
 
-	list = linkedlist.InsertAtEnd(list, 1)
-	list = linkedlist.InsertAtEnd(list, 2)
-	list = linkedlist.InsertAtEnd(list, 3)
-	list = linkedlist.InsertAtEnd(list, 4)
-	list = linkedlist.InsertAtEnd(list, 5)
-	list = linkedlist.InsertAtEnd(list, 6)
-	list = linkedlist.InsertAtEnd(list, 7)
-	list, _ = linkedlist.InsertAtNth(list, 100, 4)
-	list = linkedlist.InsertAtBeginning(list, 0)
+	list.InsertAtEnd(1)
+	list.InsertAtEnd(2)
+	list.InsertAtEnd(3)
+	list.InsertAtEnd(4)
+	list.InsertAtEnd(5)
+	list.InsertAtEnd(6)
+	list.InsertAtEnd(7)
+	list.InsertAtNth(100, 4)
+	list.InsertAtBeginning(0)
 
-	list = linkedlist.DeleteFirstNode(list)
-	list = linkedlist.DeleteLastNode(list)
-	list, _ = linkedlist.DeleteNthNode(list, 2)
+	list.DeleteFirstNode()
+	list.DeleteLastNode()
+	list.DeleteNthNode(2)
 
-	list = linkedlist.Reverse(list)
+	list.Reverse()
 
 	return list
 }
 
-func createDoublyLinkedList() *doublylinkedlist.Node {
-	var head *doublylinkedlist.Node
+func createDoublyLinkedList() doublylinkedlist.List {
+	var list doublylinkedlist.List
 
-	head = doublylinkedlist.InsertAtHead(head, 1)
-	head = doublylinkedlist.InsertAtHead(head, 2)
-	head = doublylinkedlist.InsertAtTail(head, 3)
-	head = doublylinkedlist.InsertAtTail(head, 4)
-	return head
+	list.InsertAtHead(1)
+	list.InsertAtHead(2)
+	list.InsertAtTail(3)
+	list.InsertAtTail(4)
+
+	return list
 }
 
 func createStack() *stack.Stack {
@@ -55,14 +56,14 @@ func createStack() *stack.Stack {
 
 func main() {
 	singly := createSinglyLinkedList()
-	linkedlist.Print(singly)
-	linkedlist.PrintReverse(singly)
-	singlyReversed := linkedlist.ReverseUsingStack(singly)
-	linkedlist.Print((singlyReversed))
+	singly.Print()
+	singly.PrintReverse()
+	singly.ReverseUsingStack()
+	singly.Print()
 
 	doubly := createDoublyLinkedList()
-	doublylinkedlist.Print(doubly)
-	doublylinkedlist.ReversePrint(doubly)
+	doubly.Print()
+	doubly.ReversePrint()
 
 	s := createStack()
 	s.Print()
