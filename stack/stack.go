@@ -4,46 +4,34 @@ import (
 	"fmt"
 )
 
-const MAX_SIZE = 101
+type Stack []interface{}
 
-// TODO: Change the implementation to allow [] of any type
-type Stack struct {
-	List [MAX_SIZE]int
-	top  int
+func (s *Stack) IsEmpty() bool {
+	return len(*s) == 0
 }
 
-func (s *Stack) Create() *Stack {
-	s.top = -1
-	return s
-}
-
-func (s *Stack) Push(x int) {
-	if s.top == MAX_SIZE-1 {
-		fmt.Println("Error: stack overflow")
-		return
+func (s *Stack) Pop() (interface{}, bool) {
+	if s.IsEmpty() {
+		return nil, false
+	} else {
+		index := len(*s) - 1
+		element := (*s)[index]
+		*s = (*s)[:index]
+		return element, true
 	}
-
-	s.top++
-	s.List[s.top] = x
 }
 
-func (s *Stack) Pop(x int) {
-	if s.top == -1 {
-		fmt.Println("Error: No element to pop")
-		return
-	}
-
-	s.top--
+func (s *Stack) Push(x interface{}) {
+	*s = append(*s, x)
 }
 
-func (s *Stack) Top() int {
-	return s.List[s.top]
+func (s *Stack) Top() interface{} {
+	return (*s)[len(*s)-1]
 }
 
 func (s *Stack) Print() {
-	fmt.Printf("Stack: ")
-	for i := 0; i <= s.top; i++ {
-		fmt.Printf("%d ", s.List[i])
+	for _, element := range *s {
+		fmt.Printf("%d ", element)
 	}
 	fmt.Println()
 }
