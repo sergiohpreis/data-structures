@@ -9,6 +9,7 @@ import (
 )
 
 func createSinglyLinkedList() singlylinkedlist.List {
+	fmt.Println("Singly Linked List")
 	var list singlylinkedlist.List
 
 	list.InsertAtEnd(1)
@@ -31,6 +32,7 @@ func createSinglyLinkedList() singlylinkedlist.List {
 }
 
 func createDoublyLinkedList() doublylinkedlist.List {
+	fmt.Println("Doubly Linked List")
 	var list doublylinkedlist.List
 
 	list.InsertAtHead(1)
@@ -41,16 +43,16 @@ func createDoublyLinkedList() doublylinkedlist.List {
 	return list
 }
 
-func createStack() *stack.Stack {
+func createStack() stack.Stack {
+	fmt.Println("Stack")
 	var stack stack.Stack
 
-	stack.Create()
 	stack.Push(1)
 	stack.Push(2)
 	stack.Push(3)
 	stack.Push(4)
 
-	return &stack
+	return stack
 
 }
 
