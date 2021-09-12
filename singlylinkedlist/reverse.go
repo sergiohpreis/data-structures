@@ -1,5 +1,7 @@
 package singlylinkedlist
 
+import "github.com/sergiohpreis/datastructures/stack"
+
 func reverse(head **Node, p *Node) {
 	if p.next == nil {
 		*head = p
@@ -16,35 +18,27 @@ func (list *List) Reverse() {
 	reverse(&list.head, list.head)
 }
 
-// TODO: Remove from here and add to stack
-func top(stack []*Node) *Node {
-	return stack[len(stack)-1]
-}
-func pop(stack []*Node) []*Node {
-	return stack[:len(stack)-1]
-}
-
 func (list *List) ReverseUsingStack() {
 	if list.head == nil {
 		return
 	}
 
-	var stack []*Node
+	var stack stack.Stack
 	temp := list.head
 
 	for temp != nil {
-		stack = append(stack, temp)
+		stack.Push(temp)
 		temp = temp.next
 	}
 
-	temp = top(stack)
+	temp = (stack.Top()).(*Node)
 	list.head = temp
 
-	stack = pop(stack)
+	stack.Pop()
 
 	for len(stack) > 0 {
-		temp.next = top(stack)
-		stack = pop(stack)
+		temp.next = (stack.Top()).(*Node)
+		stack.Pop()
 		temp = temp.next
 	}
 	temp.next = nil
