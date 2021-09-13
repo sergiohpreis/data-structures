@@ -7,6 +7,11 @@ Studying data structures implementations using Golang
 - Doubly Linked List
 - Stack
 
+## TODO
+
+- [ ] Write some tests
+- [ ] Taking notes abouts the data structures
+
 ## Resources
 
 - [mycodeschool](https://www.youtube.com/channel/UClEEsT7DkdVO_fkrBw0OTrA)

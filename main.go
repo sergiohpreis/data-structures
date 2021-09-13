@@ -70,11 +70,13 @@ func main() {
 	s := createStack()
 	s.Print()
 
-	fmt.Println(stack.ReverseString("Teste"))          // etset
-	fmt.Println(stack.ReverseStringUsingSwap("Teste")) // etset
+	fmt.Println(stack.ReverseString("Teste"))          // etseT
+	fmt.Println(stack.ReverseStringUsingSwap("Teste")) // etseT
 
-	fmt.Println(stack.IsBalanced((")(")))     // false
-	fmt.Println(stack.IsBalanced(("[(])")))   // false
-	fmt.Println(stack.IsBalanced(("[()")))    // false
-	fmt.Println(stack.IsBalanced(("{()()}"))) // true
+	fmt.Println(stack.IsBalanced((")(")))                // false
+	fmt.Println(stack.IsBalanced(("[(])")))              // false
+	fmt.Println(stack.IsBalanced(("[()")))               // false
+	fmt.Println(stack.IsBalanced(("{()()}")))            // true
+	fmt.Println(stack.PostfixToInt("2 3 * 5 4 * + 9 -")) // 17
+	fmt.Println(stack.PrefixToInt("- + * 2 3 * 5 4 9"))  // 17
 }
